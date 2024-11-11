@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootStudent" opacity="0.95" prefHeight="660.0" prefWidth="890.0" style="-fx-background-color: black; -fx-background-radius: 20px;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.Controller.StudentFormController">
+   <effect>
+      <InnerShadow choke="0.52" height="65.45" radius="48.015" width="128.61">
+         <color>
+            <Color red="1.0" green="1.0" blue="1.0" />
+         </color>
+      </InnerShadow>
+   </effect>
+   <children>
+      <Label layoutX="293.0" layoutY="14.0" prefHeight="64.0" prefWidth="324.0" text="Manage Student" textFill="#d1abcc">
+         <font>
+            <Font name="Segoe Print" size="36.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tblStudents" layoutX="48.0" layoutY="97.0" onMouseClicked="#tblStudentOnMouseClicked" prefHeight="184.0" prefWidth="794.0">
+         <columns>
+            <TableColumn fx:id="colStudentId" prefWidth="91.20001220703125" text="Student ID" />
+            <TableColumn fx:id="colStudentName" prefWidth="157.60003662109375" text="Name" />
+            <TableColumn fx:id="colAddress" prefWidth="136.79998779296875" text="Address" />
+            <TableColumn fx:id="colContact" prefWidth="166.4000244140625" text="Contact" />
+            <TableColumn fx:id="colDob" prefWidth="137.60003662109375" text="DOB" />
+            <TableColumn fx:id="colGender" prefWidth="107.199951171875" text="Gender" />
+         </columns>
+      </TableView>
+      <Separator layoutX="48.0" layoutY="292.0" prefHeight="30.0" prefWidth="794.0" />
+      <Label layoutX="48.0" layoutY="353.0" text="Student ID:" textFill="#a6a1a1">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtId" editable="false" layoutX="159.0" layoutY="348.0" prefHeight="33.0" prefWidth="282.0" promptText="ID" />
+      <Label layoutX="48.0" layoutY="416.0" text="Name:" textFill="#a6a1a1">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtName" layoutX="157.0" layoutY="414.0" prefHeight="33.0" prefWidth="282.0" promptText="Ishani" />
+      <Label layoutX="48.0" layoutY="478.0" text="Address:" textFill="#a6a1a1">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtAddress" layoutX="159.0" layoutY="476.0" prefHeight="33.0" prefWidth="282.0" promptText="Matara" />
+      <Label layoutX="48.0" layoutY="544.0" text="Contact:" textFill="#a6a1a1">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtContact" layoutX="159.0" layoutY="539.0" prefHeight="33.0" prefWidth="282.0" promptText="0767888979" />
+      <Label layoutX="514.0" layoutY="349.0" text="Date Of Birth" textFill="#a6a1a1">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="514.0" layoutY="399.0" text="Gender" textFill="#a6a1a1">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="cmbDob" layoutX="652.0" layoutY="351.0" showWeekNumbers="true" style="-fx-background-color: #DFF6FF;" />
+      <RadioButton fx:id="rBtnMale" focusTraversable="false" layoutX="652.0" layoutY="405.0" mnemonicParsing="false" text="Male" textFill="WHITE">
+         <toggleGroup>
+            <ToggleGroup fx:id="gender" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="rBtnFemale" focusTraversable="false" layoutX="652.0" layoutY="431.0" mnemonicParsing="false" text="Female" textFill="WHITE">
+         <toggleGroup>
+            <ToggleGroup fx:id="gender" />
+         </toggleGroup>
+      </RadioButton>
+      <JFXButton fx:id="btnSave" layoutX="540.0" layoutY="478.0" onAction="#btnSaveOnAction" prefHeight="34.0" prefWidth="98.0" style="-fx-background-color: #202046; -fx-background-radius: 10px;" text="SAVE" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnDelete" layoutX="690.0" layoutY="478.0" onAction="#btnDeleteOnAction" prefHeight="34.0" prefWidth="98.0" style="-fx-background-color: #064012; -fx-background-radius: 10px;" text="DELETE" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnUpdate" layoutX="540.0" layoutY="538.0" onAction="#btnUpdateOnAction" prefHeight="34.0" prefWidth="98.0" style="-fx-background-color: #5b0d53; -fx-background-radius: 10px;" text="UPDATE" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="btnClear" layoutX="690.0" layoutY="538.0" onAction="#btnClearOnAction" prefHeight="34.0" prefWidth="98.0" style="-fx-background-color: #0d5652; -fx-background-radius: 10px;" text="CLEAR" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+   </children>
+</AnchorPane>
